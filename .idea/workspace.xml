@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec3510d5-65c0-4c0e-99f5-0e94018669fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/META-INF/Multithreading.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/CompletableFuture/Demo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/CompletableFuture/ThreadUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/Counter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/InheritableThreadLocal/ChildRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/InheritableThreadLocal/InheritableThreadLocalComparison.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/InheritableThreadLocal/ParentRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/SimpleRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/ThreadLocal/ThreadLocalComparison.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/ThreadLocalRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/ThreadPoolThreadLocal/ThreadLocalUsingThreadPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Multithreading/com/kk/ThreadPoolThreadLocal/ThreadLocalUsingThreadPoolRunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +16,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kk/CompletableFuture/Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            <state relative-caret-position="306">
+              <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="205" column="32" lean-forward="true" selection-start-line="205" selection-start-column="32" selection-end-line="205" selection-end-column="32" />
+            <state relative-caret-position="255">
+              <caret line="154" column="94" lean-forward="true" selection-start-line="154" selection-start-column="94" selection-end-line="154" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -75,6 +66,8 @@
       <find>serializable</find>
       <find>Map</find>
       <find>Remote</find>
+      <find>enumset</find>
+      <find>enummap</find>
     </findStrings>
     <replaceStrings>
       <replace>ThreadLocal</replace>
@@ -110,7 +103,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -121,6 +114,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,8 +174,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,17 +282,18 @@
       <workItem from="1580736518909" duration="2782000" />
       <workItem from="1580822102906" duration="4126000" />
       <workItem from="1581140465979" duration="19614000" />
+      <workItem from="1581162323873" duration="426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42587000" />
+    <option name="totallyTimeSpent" value="43013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25945538" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2632375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -428,23 +422,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theoryOnMultithreading.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/theoryOnMultithreading.txt" />
     <entry file="file://$PROJECT_DIR$/src/com/kk/ThreadLocal/ThreadLocalComparison.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kk/CompletableFuture/ThreadUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -511,17 +493,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kk/CompletableFuture/ThreadUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kk/CompletableFuture/Demo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        <state relative-caret-position="306">
+          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="205" column="32" lean-forward="true" selection-start-line="205" selection-start-column="32" selection-end-line="205" selection-end-column="32" />
+        <state relative-caret-position="255">
+          <caret line="154" column="94" lean-forward="true" selection-start-line="154" selection-start-column="94" selection-end-line="154" selection-end-column="94" />
         </state>
       </provider>
     </entry>

@@ -108,6 +108,7 @@ Note 3: Study more on -> concurrent collections, count down latches, spring boot
        better concurrent option is available.
 -> Use CopyOnWriteArraySet when similar cases as that of CopyOnWriteArrayList arises and duplicates not allowed.
 -> Use EnumSet that will contain enum type of same type (faster than HashSet).
+    Order is natural i.e. the order in which the enum constants are declared inside enum type.
     values are of type enum of same type, null values are not allowed, not synchronized, doesn't throw
     ConcurrentModificationException(including concurrentMap) but other set throws
     while modifying and iterating at the same time.
@@ -151,6 +152,7 @@ Note: Hashtable(Hashtable data structure, doesn't allow null keys and values) is
     or save "key,value pairs of Strings" to a properties file.
 -> Use EnumMap that will only contain enum type of same type (faster than HashMap).
     Keys are of type enum of same type, null keys are not allowed, not synchronized, doesn't throw
+    Order is natural order of their keys( i.e. the order on which enum constant are declared inside enum type )
     ConcurrentModificationException(including concurrentMap) but other maps throws
     while modifying and iterating at the same time.
     Faster than HashMap
