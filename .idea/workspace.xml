@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec3510d5-65c0-4c0e-99f5-0e94018669fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
-    </list>
+    <list default="true" id="ec3510d5-65c0-4c0e-99f5-0e94018669fd" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="34">
+              <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -117,12 +115,12 @@
       <find>cycl</find>
       <find>lock</find>
       <find>synchronousqueue</find>
-      <find>concurrency vs</find>
       <find>Iterator</find>
       <find>arraylist</find>
       <find>sema</find>
       <find>modern</find>
       <find>concurent</find>
+      <find>concurrency vs</find>
       <find>concurrency vs</find>
     </findStrings>
     <replaceStrings>
@@ -200,7 +198,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581248006289" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581255528125" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
@@ -225,76 +223,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Deo">
-    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kk.CompletableFuture.Demo" />
-      <module name="Multithreading" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.kk.CompletableFuture.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Deo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kk.Deo" />
-      <module name="Multithreading" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.kk.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InheritableThreadLocalComparison" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kk.InheritableThreadLocal.InheritableThreadLocalComparison" />
-      <module name="Multithreading" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.kk.InheritableThreadLocal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ThreadLocalComparison" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kk.ThreadLocal.ThreadLocalComparison" />
-      <module name="Multithreading" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ThreadLocalUsingThreadPool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kk.ThreadPoolThreadLocal.ThreadLocalUsingThreadPool" />
-      <module name="Multithreading" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.kk.ThreadPoolThreadLocal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Deo" />
-        <item itemvalue="Application.ThreadLocalComparison" />
-        <item itemvalue="Application.Demo" />
-        <item itemvalue="Application.ThreadLocalUsingThreadPool" />
-        <item itemvalue="Application.InheritableThreadLocalComparison" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -310,12 +238,12 @@
       <workItem from="1580822102906" duration="4126000" />
       <workItem from="1581140465979" duration="19614000" />
       <workItem from="1581162323873" duration="507000" />
-      <workItem from="1581163695174" duration="20173000" />
+      <workItem from="1581163695174" duration="20504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63267000" />
+    <option name="totallyTimeSpent" value="63598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -592,8 +520,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="34">
+          <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
         </state>
       </provider>
     </entry>
