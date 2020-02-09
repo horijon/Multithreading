@@ -4,7 +4,6 @@
     <list default="true" id="ec3510d5-65c0-4c0e-99f5-0e94018669fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kk/ThreadLocal/ThreadLocalComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kk/ThreadLocal/ThreadLocalComparison.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="508" column="32" lean-forward="true" selection-start-line="508" selection-start-column="32" selection-end-line="508" selection-end-column="32" />
+            <state relative-caret-position="296">
+              <caret line="226" column="50" selection-start-line="226" selection-start-column="50" selection-end-line="226" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -119,6 +118,8 @@
       <find>cycl</find>
       <find>lock</find>
       <find>synchronousqueue</find>
+      <find>concurrency vs</find>
+      <find>concurrency vs</find>
     </findStrings>
     <replaceStrings>
       <replace>ThreadLocal</replace>
@@ -189,7 +190,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581245571876" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581245865350" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
@@ -299,12 +300,12 @@
       <workItem from="1580822102906" duration="4126000" />
       <workItem from="1581140465979" duration="19614000" />
       <workItem from="1581162323873" duration="507000" />
-      <workItem from="1581163695174" duration="17794000" />
+      <workItem from="1581163695174" duration="18083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60888000" />
+    <option name="totallyTimeSpent" value="61177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -581,8 +582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="508" column="32" lean-forward="true" selection-start-line="508" selection-start-column="32" selection-end-line="508" selection-end-column="32" />
+        <state relative-caret-position="296">
+          <caret line="226" column="50" selection-start-line="226" selection-start-column="50" selection-end-line="226" selection-end-column="50" />
         </state>
       </provider>
     </entry>

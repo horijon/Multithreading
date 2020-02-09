@@ -215,10 +215,15 @@ Note: Market interfaces like Cloneable, java.io.Serializable
 https://www.geeksforgeeks.org/marker-interface-java/
 
 
-Concurrency vs Parallelism
--> Parallelism is the mechanism of executing simultaneously at the same time.
+# Concurrency vs Parallelism
+Concurrency:
+-> Concurrency means multiple tasks which start, run, and complete in overlapping time periods , in no specific order.
 -> Concurrency is the mechanism of executing simultaneously by time sharing/context switching but not at the same time.
--> Anyway, we always need to be careful while parallelism, we must maintain consistency on dependent executions
+Parallelism:
+-> Parallelism is when multiple tasks OR several part of a unique task literally run at the same time,
+     e.g. on a multi-core processor.
+-> Parallelism is the mechanism of executing simultaneously at the same time.
+Note: Anyway, we always need to be careful while parallelism, we must maintain consistency on dependent executions
  and that can be achieved by applying concurrency.
 
 # Is multithreading useful even on a single processor?
@@ -511,10 +516,5 @@ Note: Number of Java Threads = Number of OS Threads.
 # Lock's Condition class
 -> alternative to "wait/notify/notifyAll (that must always be in synchronized block)"
 -> provides several other useful methods
-
-# Concurrency vs Parallelism
--> Concurrency means multiple tasks which start, run, and complete in overlapping time periods , in no specific order.
--> Parallelism is when multiple tasks OR several part of a unique task literally run at the same time,
-    e.g. on a multi-core processor.
 
 Note: There is a NIO package available in java to support non-blocking I/O operations.
