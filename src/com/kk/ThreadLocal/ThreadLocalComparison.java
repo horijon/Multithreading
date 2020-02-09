@@ -27,9 +27,12 @@ public class ThreadLocalComparison {
         Runnable runnable1 = new SimpleRunnable();
         Runnable runnable2 = new SimpleRunnable();
         Runnable runnable3 = new SimpleRunnable();
-        Thread threadLocalThreadFirst1 = new Thread(runnable1, "Different Runnable Instance 1st Thread - ");
-        Thread threadLocalThreadSecond2 = new Thread(runnable2, "Different Runnable Instance 2nd Thread - ");
-        Thread threadLocalThreadThird3 = new Thread(runnable3, "Different Runnable Instance 3rd Thread - ");
+        Thread threadLocalThreadFirst1 = new Thread(runnable1,
+                "Different Runnable Instance 1st Thread - ");
+        Thread threadLocalThreadSecond2 = new Thread(runnable2,
+                "Different Runnable Instance 2nd Thread - ");
+        Thread threadLocalThreadThird3 = new Thread(runnable3,
+                "Different Runnable Instance 3rd Thread - ");
 
         threadLocalThreadFirst1.start();
         threadLocalThreadFirst1.join();
@@ -40,9 +43,12 @@ public class ThreadLocalComparison {
 
         // achieved consistency and avoided memory problems
         Runnable runnable = new ThreadLocalRunnable();
-        Thread threadLocalThreadFirst = new Thread(runnable, "1st Thread - ThreadLocal - ");
-        Thread threadLocalThreadSecond = new Thread(runnable, "2nd Thread - ThreadLocal - ");
-        Thread threadLocalThreadThird = new Thread(runnable, "3rd Thread - ThreadLocal - ");
+        Thread threadLocalThreadFirst = new Thread(runnable,
+                "1st Thread - ThreadLocal - ");
+        Thread threadLocalThreadSecond = new Thread(runnable,
+                "2nd Thread - ThreadLocal - ");
+        Thread threadLocalThreadThird = new Thread(runnable,
+                "3rd Thread - ThreadLocal - ");
 
         threadLocalThreadFirst.start();
         threadLocalThreadFirst.join();
@@ -53,5 +59,3 @@ public class ThreadLocalComparison {
 
     }
 }
-
-
