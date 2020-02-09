@@ -1,3 +1,32 @@
+# Multitasking
+-> Time sharing (time slots)
+-> Tasks sharing a common resource (like 1 CPU).
+# Multiprogramming
+-> Context switching
+-> Logical extension of multitasking
+eg; A computer with 1 CPU running more than one program at a time (like running Excel and Firefox simultaneously)
+# Multiprocessing
+-> multiple CPUs/processors
+-> Parallel processing.
+-> Multiple processor does multiple tasks at the same instant of time.
+# Multithreading
+-> a thread is a single unit of a process.
+-> All the threads of a process have their own(different) stacks inside the memory of the same process.
+-> It is used to achieve multitasking.
+-> It is an extension of multitasking.
+Note: Note: Modern OS Schedulers puts the different threads even of the same process on different available cores if any.
+
+# Concurrency vs Parallelism
+Concurrency:
+-> Concurrency means multiple tasks which start, run, and complete in overlapping time periods , in no specific order.
+-> Concurrency is the mechanism of executing simultaneously by time sharing/context switching but not at the same time.
+Parallelism:
+-> Parallelism is when multiple tasks OR several part of a unique task literally run at the same time,
+     e.g. on a multi-core processor.
+-> Parallelism is the mechanism of executing simultaneously at the same time.
+Note: Anyway, we always need to be careful while parallelism, we must maintain consistency on dependent executions
+ and that can be achieved by applying concurrency.
+
 1) For multitasking we went for multithreading.
     -> Thread class gave that functionality but lacked multiple inheritance feature so, Runnable came into picture.
     -> But still it had concurrency problems.
@@ -161,12 +190,18 @@ Note: Hashtable(Hashtable data structure, doesn't allow null keys and values) is
 Cursors in Java
 1) Enumeration :-
 -> To iterate and read elements in objects of legacy classes (Stack, Vector, Hashtable); only in forward direction.
-2) Iterator (Universal iterator) :-
+2) Iterator (Universal iterator for any collection classes) :-
 -> To iterate on any collection classes + read/remove while iterating
-forEach or for in loop internally uses Iterator, so we can implement Iterator on custom classes
-eg; Employee class; loop Employee objects just by using for in or for each loop.
-https://www.journaldev.com/13460/java-iterator
-but why bother, as it can be done rather, just by iterating the list.
+->forEach or for in loop internally uses Iterator, so we can implement Iterator on custom classes
+    eg; Employee class; loop Employee objects just by using for in or for each loop.
+        https://www.journaldev.com/13460/java-iterator
+    but why bother, as it can be done rather, just by iterating the list.
+-> for in loop vs iterator usage (when to use which):-
+    If we have to modify collection, we can use Iterator because can't modify in the for in loop.
+    While using nested for loops it is better to use for-each loop, consider the below code for better understanding.
+        https://www.geeksforgeeks.org/java-implementing-iterator-and-iterable-interface/
+    "Develop Custom Class Iterator" (to use for in loop in case of custom classes, i.e. for custom iterator)
+        https://www.journaldev.com/13460/java-iterator
 3) ListIterator (only for list implemented classes) :-
 -> iterator + bi-directional iteration + read/remove/modify/add while iterating + many other useful methods
 4) Spliterator :-
@@ -214,18 +249,6 @@ Note: ArrayList, Stack, Vector, CopyOnWriteArrayList implements java.util.Random
 Note: Market interfaces like Cloneable, java.io.Serializable
 https://www.geeksforgeeks.org/marker-interface-java/
 
-
-# Concurrency vs Parallelism
-Concurrency:
--> Concurrency means multiple tasks which start, run, and complete in overlapping time periods , in no specific order.
--> Concurrency is the mechanism of executing simultaneously by time sharing/context switching but not at the same time.
-Parallelism:
--> Parallelism is when multiple tasks OR several part of a unique task literally run at the same time,
-     e.g. on a multi-core processor.
--> Parallelism is the mechanism of executing simultaneously at the same time.
-Note: Anyway, we always need to be careful while parallelism, we must maintain consistency on dependent executions
- and that can be achieved by applying concurrency.
-
 # Is multithreading useful even on a single processor?
 -> Trivially yes, as a single processor can have multiple physical cores,
 and a single physical core can have multiple logical cores due to hyperthreading/SMT.
@@ -240,8 +263,6 @@ Put simply, if our application is running even on only a single-threaded CPU, ou
 can benefit tremendously from threading techniques that separate IO bottlenecks from application logic that is CPU bound.
 However, if we’re using multiple threads to number crunch then we’re gaining nothing but the overhead of additional
     threading and context switching without the benefit of actual parallel processing.
-
-Note: Modern OS Schedulers puts the multiple threads on different available cores if any.
 
 Note: Defog Tech: youtube tutorials
 Note: Best number of threads in a thread pool =
