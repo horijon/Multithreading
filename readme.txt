@@ -53,13 +53,12 @@ Note:
 	per task,
     so we need to reduce this memory issue; also static variables change is visible to per task of that same runnable/callable
     and the change by one thread is seen by the other thread, this is also an issue.
-    So, we go with ThreadLocal to reduce memory issue and it is usually for static variables that makes a thread
-    not see changes by another thread i.e. it creates the object instances per thread but not per task.
-    The child thread cannot access parents thread variable values as ThreadLocal class is used,
+    So, we go with ThreadLocal to have variable per thread and not per task/job to reduce memory issue and it is usually for static variables that makes a thread not see changes by another thread i.e. it creates the object instances per thread but not per task. Its advantage eg; sequentially executing tasks using the threadlocal variable.
+    But, he child thread cannot access parents thread variable values as ThreadLocal class is used,
     so InheritableThreadLocal came into picture. Internal implementation of the threadLocal -
     each threadLocal is kept in a map, so that we can set/get by each threadLocal instance.
-5) Threadlocal is to do operations on separate tasks and have separate variables per thread and we can take its 
-	advantage when using thread pools, but if we need to share a variable among multiple threads and also achieve concurrency, eg; incrementing an integer value inside a loop by multiple threads and also achieving consistency, in such case, we need to use Atomic wrapper classes like AtomicInteger, AtomicBoolean.
+5) Threadlocal is to do operations on separate tasks and have separate variables per thread but, if we need to 	
+	share a variable among multiple threads and also achieve concurrency, eg; incrementing an integer value inside a loop by multiple threads and also achieving consistency, in such case, we need to use Atomic wrapper classes like AtomicInteger, AtomicBoolean.
 6) To reduce the expensive operations of creating thread each time for each task/job i.e. Runnable/Callable, etc,
     we used threadpool. But while doing so, it brought concurrency problem when using ThreadLocal class only,
     so we need to call remove method on that threadLocal instance inside that task(runnable/callable) class to remove ThreadLocal value of that thread to its initial value, after every task completes.
