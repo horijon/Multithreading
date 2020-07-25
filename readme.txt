@@ -98,7 +98,7 @@ i.e. create member instances of a task per thread but not per task. In addition 
         4) ConcurrentSkipListMap
 		4) ConcurrentSkipListSet
         Use ConcurrentHashMap where a lot of concurrent addition happens followed by concurrent reads later on.
-        It is not atomic, so while iterating, reading and writing is goind at the same time, then we better take help of
+        It is not atomic, so while iterating, reading and writing is going at the same time, then we better take help of
         atomic wrapper classes
 5) Use Runnable if no return type expected.
 	Use Callable and future.get() if return type expected.
@@ -215,7 +215,7 @@ Sorting:-
 
 2) Comparator
 -> customized sorting
--> implemented by the LOC that uses the list and is not satisfied by the default natural sorting; but requires its
+-> implemented by the LOC that uses the list and if not satisfied by the default natural sorting; but requires its
     own sorting strategy/logic.
 -> needs to override compare(logic for sorting) method; overriding equals method is optional
     that can be used inside compare method. implementation inside it looks like eg; object1.name.compareTo(object2.name)
@@ -244,7 +244,7 @@ Note: All collection classes are serializable and cloneable as all implements Cl
 
 Note: ArrayList, Stack, Vector, CopyOnWriteArrayList implements java.util.RandomAccess for faster access to the element.
 
-Note: Market interfaces like Cloneable, java.io.Serializable
+Note: Marker interfaces like Cloneable, java.io.Serializable
 https://www.geeksforgeeks.org/marker-interface-java/
 
 # Is multithreading useful even on a single processor?
@@ -257,7 +257,7 @@ IO is often ludicrously slow. A single transaction to an HDD can stall for milli
     appropriate sector of disk to come swinging around. Likewise a network transaction can take an arbitrary
     amount of time to complete as you upload or download an object. Blocking further processing upon completion
     of such IO can be a tremendous waste of CPU time.
-Put simply, if our application is running even on only a single-threaded CPU, our application.
+Put simply, if our application is running even on only a single-threaded CPU, our application
 can benefit tremendously from threading techniques that separate IO bottlenecks from application logic that is CPU bound.
 However, if we’re using multiple threads to number crunch then we’re gaining nothing but the overhead of additional
     threading and context switching without the benefit of actual parallel processing.
@@ -275,7 +275,7 @@ Types of Thread pools :-
 1) Executors.newFixedThreadPool(fixedPoolSize); -> (LinkedBlockingQueue) creates a pool of size = fixedPoolSize
 2) Executors.newCachedThreadPool(); -> (SynchronousQueue that holds only 1 task) creates a pool with dynamic number of size, used when the number of tasks
     is unknown. When a task comes to the queue, then it searches for any thread
-    is that is free, if it is, then it uses it otherwise it creates a new thread for that 1 task.
+    if that is free, and if any free thread is available then it uses it, otherwise it creates a new thread for that task.
     Also, if any thread remains idle for more than around 60 seconds then the thread will be killed.
 3) Executors.newScheduledThreadPool(poolSize); -> (DelayedWorkQueue) creates a pool with size = poolSize.
     It will create threads more than the poolSize if needed to execute more tasks at the same time.
@@ -297,7 +297,6 @@ It sub-tasks any task and maintain its own local queue i.e. for a thread, there 
 and another for its local sub-tasks. If any other threads are idle and any other thread has sub-tasks, then the idle thread
 will steal the sub-task from the tail of the local queue of another thread and execute it.
 While using ForkJoinPool, we need to be careful that all the sub-tasks will be independent of each other.
-It is usually used in case of ...
 
 # Java Memory Model
 -> "happens before" style.
@@ -359,7 +358,7 @@ Refer defog tech concurrency vs parallelism videos in youtube:-
     should be constantly polling/listening to any interrupts, this polling is done by using infinite while loop that
     terminates only on either interruption or after task completion. Then inside the while loop, we need to reset the
     interrupted status and throw InterruptedException to notify the thread that is interrupting it.
-    So, there seems we need have a "co-operation/not by force" between the thread interrupting and the task executing.
+    So, there seems we need to have a "co-operation/not by force" between the thread interrupting and the task executing.
 
 # Semaphore
 -> If we need a fixed number of threads to execute a task at a time, then we need to permit only that number of threads
@@ -384,10 +383,9 @@ Note: For coding, we can see simply google/docs.
 
 # SynchronousQueue
 -> When there is a scenario, where producer needs to provide 1 task to a consumer (assuming a situation where
-    the consumer can only hold 1 task at a time), so we need a queue of size only 1. This can be replaced by directly
+    the consumer can only hold 1 task at a time), so we need a queue of size only 1. This is used when we need to use a queue (store data prior to processing). Otherwise, this can be replaced by directly
     giving/handing the task from the producer to the consumer rather than "the consumer pick the task from the queue".
-    Here the producer will only send 1 task,
-    and after its work completed by the consumer then only the producer will send another task.
+    Here, the producer will only send 1 task; and only after the work is completed by the consumer, the producer will send another task.
 
 # Exchanger
 -> Similar as SynchronousQueue but with hand-off in both directions.
@@ -403,9 +401,8 @@ Note: For coding, we can see simply google/docs.
     Whenever another thread "t2" in core "c2" tries to get the increment, it needs updated value,
     for this the value updated by the previous thread "t1" in previous core "c1" local cache is flushed to the
     shared cache/memory, so the value needs to be refreshed in the local cache of core "c2". This flushing and
-    refreshing decreases the throughput/performance. So, we need a mechanism that the keep count in one core
-    "c1" local cache in a separate variable, also keep count in another core "c2" local cache, at update independently,
-    and at last when we need the total count, we can sum it by using counter.sum() . For this, LongAdder came into picture.
+    refreshing decreases the throughput/performance. So, we need a mechanism that keeps count in one core
+    "c1" local cache in a separate variable, and also keeps another count in another core "c2" local cache, and update independently, and at last when we need the total count, we can sum it by using counter.sum() . For this, LongAdder came into picture.
     We need to be careful that we should not use the value of the LongAdder variable before doing sum.
 
 # Accumulator (eg; LongAccumulator)
@@ -424,8 +421,7 @@ Detecting:-
 -> ManagementFactory.getThreadMXBean.findDeadLockedThreads() can be used to find the dead locked threads.
 Preventing:-
 -> Include timeouts while acquiring locks
--> Maintain order of locks, i.e. if in one place it is trying to acquire lock A and then lock B, then in another place
-    as well first it needs to try for Lock A and then only lock B.
+-> Maintain order of locks, i.e. if it is trying to acquire lock A and then lock B in one place, then in another place as well, it should first try to get Lock A and then only lock B.
 -> We can maintain global ordering of the locking.
     eg; public void doSomething(Account account1, Account account2) {
             // extra logic to tweak to prevent from deadlock
@@ -441,8 +437,8 @@ Preventing:-
         So, we need to make use extra logic to tweak(eg; swap) it to work without deadlock.
 
 # Data Races
--> If multiple threads access shared variable without synchronization and at the same time at least one thread is writing
-    to the variable then data race condition can occur. It is the case where
+-> If multiple threads access shared variable without synchronization and at the same time at least one thread is 
+	writing to the variable then data race condition can occur. It is the case where
     a portion of the bits of the object is changed by a thread and at the same time,
     another thread reads the object value then it will get a portion updated and remaining portion
     old value, i.e. it neither gets stale nor updated value, but gets corrupt value. This situation is called
