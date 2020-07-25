@@ -50,15 +50,14 @@ Note:
     that was only able to get method level lock but it now gets lock to a series of methods execution.
     We can also tryLock and if available execute normal operation or go for alternative operation.
 4) Multiple tasks with same runnable/callable instance creates member variables of that runnable/callable class 
-	per task,
-    so we need to reduce this memory issue; also static variables change is visible to per task of that same runnable/callable
-    and the change by one thread is seen by the other thread, this is also an issue.
-    So, we go with ThreadLocal to have variable per thread and not per task/job to reduce memory issue and it is usually for static variables that makes a thread not see changes by another thread i.e. it creates the object instances per thread but not per task. Its advantage eg; sequentially executing tasks using the threadlocal variable.
-    But, he child thread cannot access parents thread variable values as ThreadLocal class is used,
+	per task/job, so we need to reduce this memory issue; also static variables change is visible to every threads of that same runnable/callable this is also an issue.
+	So, ThreadLocal static variable is used to have static variable per thread and not shared among task/job of the same runnable/callable so as to achieve concurrency among multiple threads operating on the static variable of that runnable/callable but while using threadpools we need to use remove() method after completion of that task/job. Also, ThreadLocal instance variable are created per thread and not per job/task of the same runnable/callable, and when using threadpools we can benefit using ThreadLocal as we can perform multiple tasks done by the same thread.
+    So, we go with ThreadLocal variable to have variable per thread and not per task/job so as to reduce memory issue and it is usually for static variables that makes a thread not see changes by another thread i.e. it creates the object instances per thread but not per task.
+    But, the child thread cannot access parents thread variable values as ThreadLocal class is used,
     so InheritableThreadLocal came into picture. Internal implementation of the threadLocal -
     each threadLocal is kept in a map, so that we can set/get by each threadLocal instance.
-5) Threadlocal variable came into picture so that multiple threads operating on the same code/task/job have 	
-	separate isolated(local) variables per thread. But if we need to share a variable among multiple threads and also achieve concurrency/consistency, eg; incrementing an integer value inside a loop by multiple threads and also achieving consistency, in such case, we need to use Atomic wrapper classes like AtomicInteger, AtomicBoolean.
+5) But if we need to share a variable among multiple threads and also achieve concurrency/consistency, eg; 	
+	incrementing an integer value inside a loop by multiple threads and also achieving consistency, in such case, we need to use Atomic wrapper classes like AtomicInteger, AtomicBoolean.
 6) To reduce the expensive operations of creating thread each time for each task/job i.e. Runnable/Callable, etc,
     we used threadpool. But while doing so, it brought concurrency problem when using ThreadLocal class only,
     so we need to call remove method on that threadLocal instance inside that task(runnable/callable) class to remove ThreadLocal value of that thread to its initial value, after every task completes.
