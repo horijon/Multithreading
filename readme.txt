@@ -30,8 +30,8 @@ Note: Anyway, we always need to be careful while parallelism, we must maintain c
 1) For multitasking we went for multithreading.
     -> Thread class gave that functionality but lacked multiple inheritance feature so, Runnable came into picture.
     -> But still it had concurrency problems.
-2) Then for achieving concurrency in addition to multithreading, we went for separate member instance of each member variables
-    per job/task.
+2) Then for achieving concurrency in addition to multithreading, we went for separate member instance of each 
+	member variables per job/task.
     -> It brought memory problems as each task/job have separate instance of each member variables of the Thread class.
 3) Then to achieve multithreading, concurrency and also avoid memory problems, we went for another approach.
     -> Having separate member instance per thread but not per task/job/Runnable. ThreadLocal provided that functionality.
@@ -58,14 +58,13 @@ Note:
     The child thread cannot access parents thread variable values as ThreadLocal class is used,
     so InheritableThreadLocal came into picture. Internal implementation of the threadLocal -
     each threadLocal is kept in a map, so that we can set/get by each threadLocal instance.
-5) Threadlocal is to do operations on separate tasks and have separate variables per thread, but if we need to 	
-	share a variable among multiple threads and also achieve concurrency, eg; incrementing an integer value inside a loop by multiple threads and also achieving consistency, in such case, we need to use Atomic wrapper classes like AtomicInteger, AtomicBoolean.
+5) Threadlocal is to do operations on separate tasks and have separate variables per thread and we can take its 
+	advantage when using thread pools, but if we need to share a variable among multiple threads and also achieve concurrency, eg; incrementing an integer value inside a loop by multiple threads and also achieving consistency, in such case, we need to use Atomic wrapper classes like AtomicInteger, AtomicBoolean.
 6) To reduce the expensive operations of creating thread each time for each task/job i.e. Runnable/Callable, etc,
     we used threadpool. But while doing so, it brought concurrency problem when using ThreadLocal class only,
-    so we need to call remove method on that threadLocal instance inside that task(runnable/callable) class to remove
-    ThreadLocal value of that thread to its initial value, after every task completes.
+    so we need to call remove method on that threadLocal instance inside that task(runnable/callable) class to remove ThreadLocal value of that thread to its initial value, after every task completes.
 eg; of Threadpool -> ExecutorService service = Executors.newFixedThreadPool(3);
-						service.submit(task); // task/job/runnble/callable
+						service.submit(task); // task/job/runnable/callable
 7) If multiple threads need to work on the same object/collection, and the change needs to be visible by the other 
 	threads in addition to relatively increased performance then we need to go for Concurrent collections.
 8) Runnable is used when the return type of the thread execution is void. We can use Callable that returns an object
